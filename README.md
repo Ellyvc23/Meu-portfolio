@@ -17,7 +17,7 @@ Bem-vindo ao repositório do meu site pessoal! Este projeto foi desenvolvido par
 * **Design Responsivo:** Navegação otimizada para computadores, tablets e smartphones.
 
 ## 🌐 Link do Projeto
-Você pode visualizar o site online aqui: 
+Você pode visualizar o site online aqui: https://ellyvc23.github.io/Meu-portfolio/
 
 ---
 Desenvolvido por **Ellyson Vaz Correia** ⚡
