@@ -197,17 +197,22 @@ header img{
     border-radius: 100px;
     margin: 0 20px;
     padding: 10px 20px;
-    font-size: 20px;
     cursor: pointer;
-    color: white;
     transition: 0.3s;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: 0px solid;
+}
+.button-conteiner a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+.button-conteiner a {
+    color: black;
 }
 
 .button-conteiner:hover {
     background-color: white;
-    color: black;
     transition: 0.3s;
     transform: scale(1.1);
 }
