@@ -71,48 +71,6 @@ faqHeaders.forEach(header => {
     });
 });
 
-
-/* EmailJS */
-const formulario = document.getElementById('meu-formulario');
-const botaoSubmit = formulario.querySelector('.btn-submit');
-
-formulario.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const regexNome = /^[A-Za-zÀ-ÿ]+(?: [A-Za-zÀ-ÿ]+)+$/;
-
-    if (!regexNome.test(campoNome.value)) {
-        alert('Nome ou sobrenome faltando. Insira seu nome completo por favor.')
-        return;
-    }
-
-    if (!regexEmail.test(campoEmail.value)) {
-        alert('E-mail invalido! Insira um e-mail valido.')
-        return;
-    }
-    
-    if (msg.value.length <= 30){
-        alert('Caracteres insuficiente, por favor detalhe mais seu projeto')
-        return;
-    }
-
-    botaoSubmit.innerText = "Enviando...";
-    botaoSubmit.disabled = true; 
-
-    emailjs.sendForm('service_1qf2b8n', 'template_6ac4ebo', this)
-        .then(() => {
-
-            botaoSubmit.innerText = "Enviado!";
-            formulario.reset();
-        }, (error) => {
-   
-            console.log('Erro:', error);
-            botaoSubmit.innerText = "Erro ao enviar";
-            botaoSubmit.disabled = false;
-        });
-});
-
 /* Só pode numeros no telefone */
 const campoTelefone = document.querySelector ('[name="telefone"]')
 
@@ -189,6 +147,47 @@ msg.addEventListener('input', function(event) {
         event.target.style.borderColor = 'green'
     }
     });
+
+/* EmailJS */
+const formulario = document.getElementById('meu-formulario');
+const botaoSubmit = formulario.querySelector('.btn-submit');
+
+formulario.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regexNome = /^[A-Za-zÀ-ÿ]+(?: [A-Za-zÀ-ÿ]+)+$/;
+
+    if (!regexNome.test(campoNome.value)) {
+        alert('Nome ou sobrenome faltando. Insira seu nome completo por favor.')
+        return;
+    }
+
+    if (!regexEmail.test(campoEmail.value)) {
+        alert('E-mail invalido! Insira um e-mail valido.')
+        return;
+    }
+    
+    if (msg.value.length <= 30){
+        alert('Caracteres insuficiente, por favor detalhe mais seu projeto')
+        return;
+    }
+
+    botaoSubmit.innerText = "Enviando...";
+    botaoSubmit.disabled = true; 
+
+    emailjs.sendForm('service_1qf2b8n', 'template_6ac4ebo', this)
+        .then(() => {
+
+            botaoSubmit.innerText = "Enviado!";
+            formulario.reset();
+        }, (error) => {
+   
+            console.log('Erro:', error);
+            botaoSubmit.innerText = "Erro ao enviar";
+            botaoSubmit.disabled = false;
+        });
+});
 
 /* botão hamburguer */
 const botaoMenu = document.querySelector('.bars')
