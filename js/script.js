@@ -25,6 +25,7 @@ const botaoAnterior = document.querySelector('.anterior')
 
 function slideAnterior() {
     slides[slideatual].classList.remove('ativa')
+    bolinhas[slideatual].classList.remove('ativa')
     if (slideatual === 0) {
         slideatual = slides.length - 1;
     } else {
@@ -32,6 +33,7 @@ function slideAnterior() {
     }
 
     slides[slideatual].classList.add('ativa')
+    bolinhas[slideatual].classList.add('ativa')
 }
 
 botaoProximo.addEventListener('click', function () {
@@ -187,3 +189,19 @@ msg.addEventListener('input', function(event) {
         event.target.style.borderColor = 'green'
     }
     });
+
+/* botão hamburguer */
+const botaoMenu = document.querySelector('.bars')
+const menu = document.querySelector('.hd1')
+
+botaoMenu.addEventListener('click', function(){
+    menu.classList.toggle('ativa')
+});
+
+const linkMenu = document.querySelectorAll('.hd1 a')
+
+linkMenu.forEach(link => {
+    link.addEventListener('click', function() {
+        menu.classList.remove('ativa')
+    })
+});
